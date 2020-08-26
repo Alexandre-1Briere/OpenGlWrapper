@@ -19,9 +19,33 @@ unsigned int shader::createShader(const std::string& vertexShader, const std::st
     return program;
 }
 
-void shader::readShaderFile(const std::string& fileName)
+ShaderSource shader::readShaderFile(const std::string& fileName)
 {
-    return;
+    std::stringstream shader[2];
+    std::ifstream reader(fileName);
+    std::string line;
+    unsigned int defaultMode = ShaderIndex::NONE;
+    if (!reader.is_open()) {
+        LogMessage::error("shader file " + fileName + "couldn't be loaded");
+        return {"",""};
+    }
+    while (getline(reader, line)) {
+        if (line.find("#shader") != std::string::npos) {
+            if (line.find("vertex") != std::string::npos) {
+                defaultMode = ShaderIndex::VERTEX;
+            }
+            else if (line.find("fragment") != std::string::npos) {
+                defaultMode = ShaderIndex::FRAGMENT;
+            }
+        }
+        else if (defaultMode != ShaderIndex::NONE) {
+            shader[defaultMode] << line << "\n";
+        }
+    }
+    ShaderSource returnValue;
+    returnValue.VertexSource = shader[ShaderIndex::VERTEX].str();
+    returnValue.FragmentSource = shader[ShaderIndex::FRAGMENT].str();
+    return returnValue;
 }
 
 

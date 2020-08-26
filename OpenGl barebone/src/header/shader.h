@@ -20,7 +20,7 @@ class shader
 public:
 	unsigned int test;
 	unsigned int createShader(const std::string& vertexShader, const std::string& fragmentShader);
-	void readShaderFile(const std::string& fileName);
+	ShaderSource readShaderFile(const std::string& fileName);
 private:
 	unsigned int CompileShader(unsigned int type, const std::string& source);
 };

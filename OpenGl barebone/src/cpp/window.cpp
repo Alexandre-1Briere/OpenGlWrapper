@@ -2,12 +2,12 @@
 
 window::window()
 {
+    compilator = shader();
     data = new dataStruct();
 }
 
 void window::start()
 {
-    compilator = shader();
     //this function execute before the first draw loop
     //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
     //change the code between the marker
@@ -17,7 +17,8 @@ void window::start()
          0.0f,  0.5f,
          0.5f, -0.5f
     };
-    unsigned int programId = compilator.createShader("","");
+    ShaderSource source = compilator.readShaderFile("ressource/shader/basic.shader");
+    unsigned int programId = compilator.createShader(source.VertexSource, source.FragmentSource);
 
     unsigned int bufferId;
     glGenBuffers(1, &bufferId);
@@ -26,6 +27,8 @@ void window::start()
 
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), 0);
+
+    glUseProgram(programId);
 
     //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
     //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
