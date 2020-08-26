@@ -1,4 +1,7 @@
 #pragma once
+#ifndef LOGMESSAGE
+#define LOGMESSAGE
+
 #include <string>
 #include <iostream>
 #include "Parameter.h"
@@ -30,3 +33,5 @@ public:
 	};
 };
 
+
+#endif // !LOGMESSAGE

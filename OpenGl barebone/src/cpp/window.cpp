@@ -3,11 +3,11 @@
 window::window()
 {
     data = new dataStruct();
-    compilator = shader();
 }
 
 void window::start()
 {
+    compilator = shader();
     //this function execute before the first draw loop
     //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
     //change the code between the marker
@@ -17,18 +17,7 @@ void window::start()
          0.0f,  0.5f,
          0.5f, -0.5f
     };
-
-    std::string vertexShader =
-        "#version 330 core\n"
-        "\n"
-        "in vec4 pos\n"
-        "\n"
-        "void main() {\n"
-        "}\n";
-    std::string fragmentShader =
-        "";
-
-    unsigned int programId = compilator.createShader(vertexShader, fragmentShader);
+    unsigned int programId = compilator.createShader("","");
 
     unsigned int bufferId;
     glGenBuffers(1, &bufferId);

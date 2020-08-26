@@ -1,4 +1,7 @@
 #pragma once
+#ifndef PARAMETER
+#define PARAMETER
+
 enum ErrorLevel
 {
 	CRITICAL = 0,
@@ -11,3 +14,5 @@ enum ErrorLevel
 #define WINDOW_NAME "project name"
 #define WINDOW_HEIGHT 480
 #define WINDOW_WIDTH 1000
+
+#endif // !PARAMETER

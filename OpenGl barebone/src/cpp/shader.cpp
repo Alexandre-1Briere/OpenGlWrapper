@@ -1,4 +1,6 @@
-#include "shader.h"
+#include <fstream>
+#include <sstream>
+#include "..\header\shader.h"
 unsigned int shader::createShader(const std::string& vertexShader, const std::string& fragmentShader)
 {
     //this function create the shader program do not alter it
@@ -17,11 +19,11 @@ unsigned int shader::createShader(const std::string& vertexShader, const std::st
     return program;
 }
 
-unsigned int shader::readFullShaderFile(const std::string& fileName)
+void shader::readShaderFile(const std::string& fileName)
 {
-    std::string shader[2];
-    return shader::createShader(shader[0], shader[1]);
+    return;
 }
+
 
 unsigned int shader::CompileShader(unsigned int type, const std::string& source) {
     unsigned int id = glCreateShader(type);

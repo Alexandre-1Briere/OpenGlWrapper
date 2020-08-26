@@ -1,5 +1,4 @@
 #include <window.h>
-#include <log.h>
 
 #include <iostream>
 

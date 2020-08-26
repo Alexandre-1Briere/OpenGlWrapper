@@ -35,5 +35,11 @@
     <ClInclude Include="src\header\window.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\header\shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\header\log.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
