@@ -6,14 +6,8 @@
 #include <GLFW/glfw3.h>
 #include "log.h"
 #include "variable.h"
+#include "Struct.h"
 
-
-
-enum ShaderIndex {
-	VERTEX = 0,
-	FRAGMENT = 1,
-	NONE = -1
-};
 
 class shader
 {

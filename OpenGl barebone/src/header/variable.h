@@ -10,8 +10,3 @@ struct dataStruct {
     //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
     //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 };
-
-struct ShaderSource {
-    std::string VertexSource;
-    std::string FragmentSource;
-};

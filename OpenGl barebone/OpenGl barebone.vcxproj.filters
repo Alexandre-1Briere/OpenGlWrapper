@@ -41,5 +41,11 @@
     <ClInclude Include="src\header\log.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\header\Struct.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\header\Enum.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
