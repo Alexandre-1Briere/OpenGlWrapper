@@ -350,5 +350,5 @@ MigrationBackup/
 .ionide/
 
 # library file
-./GLEW/
-./GLFW/
+GLEW
+GLFW/
