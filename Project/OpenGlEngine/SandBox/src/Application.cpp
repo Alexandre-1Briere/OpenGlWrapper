@@ -1,5 +1,11 @@
 #include <iostream>
+#include <Engine.h>
 
-void main(int argc, char* argv[]) {
+class Sandbox : public Engine::Application
+{
 
+};
+
+Engine::Application* Engine::CreateApplication() {
+	return new Sandbox();
 }
